@@ -95,7 +95,6 @@ else:
     st.info("Showing results on the bundled test_data.csv. "
             "Upload your own test CSV from the sidebar to evaluate it instead.")
 
-raw = pd.read_csv(uploaded)
 missing = [c for c in REQUIRED_COLS + [TARGET] if c not in raw.columns]
 if missing:
     st.error(f"Uploaded file is missing columns: {missing}")
