@@ -1,7 +1,7 @@
 # Telco Customer Churn — Classification Model Comparison
 
 **Live app:** <PASTE_STREAMLIT_APP_URL>
-**Repository:** <PASTE_GITHUB_REPO_URL>
+**Repository:** <https://github.com/079-sathya/ml-assignment2-churn>
 
 ## a. Problem Statement
 
