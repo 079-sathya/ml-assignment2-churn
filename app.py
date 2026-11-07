@@ -87,10 +87,13 @@ st.title("Customer Churn Prediction — Model Evaluation")
 st.write("Upload held-out test data to see how each pre-trained classifier performs. "
          "Models are loaded from disk; nothing is retrained on your upload.")
 
-if uploaded is None:
-    st.info("👈 Upload a test CSV from the sidebar to begin "
-            "(you can download the sample file there).")
-    st.stop()
+if uploaded is not None:
+    raw = pd.read_csv(uploaded)
+    st.success(f"Using uploaded file: {uploaded.name}")
+else:
+    raw = pd.read_csv(sample)
+    st.info("Showing results on the bundled test_data.csv. "
+            "Upload your own test CSV from the sidebar to evaluate it instead.")
 
 raw = pd.read_csv(uploaded)
 missing = [c for c in REQUIRED_COLS + [TARGET] if c not in raw.columns]
